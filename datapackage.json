@@ -1,0 +1,740 @@
+{
+  "bytes": 41313713,
+  "datahub": {
+    "created": "2017-11-09T01:05:26.330446",
+    "findability": "published",
+    "flowid": "core/un-locode/12",
+    "modified": "2018-08-06T09:13:58.581189",
+    "owner": "core",
+    "ownerid": "core"
+  },
+  "hash": "9d7dd73bf4c59b7eef41da5a9c867ce4",
+  "id": "core/un-locode",
+  "licensces": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
+  "name": "un-locode",
+  "related": [
+    {
+      "formats": [
+        "CSV",
+        "JSON"
+      ],
+      "path": "/core/country-list",
+      "publisher": "core",
+      "title": "Country list"
+    },
+    {
+      "formats": [
+        "CSV",
+        "JSON"
+      ],
+      "path": "/core/country-codes",
+      "publisher": "core",
+      "title": "Country codes"
+    },
+    {
+      "formats": [
+        "CSV",
+        "JSON"
+      ],
+      "path": "/core/airport-codes",
+      "publisher": "core",
+      "title": "Airport codes"
+    },
+    {
+      "formats": [
+        "CSV",
+        "JSON"
+      ],
+      "path": "/core/language-codes",
+      "publisher": "core",
+      "title": "Language codes"
+    }
+  ],
+  "resources": [
+    {
+      "bytes": 6832717,
+      "datahub": {
+        "type": "original"
+      },
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/8c8920a685827192f58cc27d13c0486e.csv",
+      "encoding": "UTF-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "code-list_original",
+      "path": "archive/code-list.csv",
+      "pathType": "local",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "description": "+ (newly added); X (to be removed); | (changed); # (name changed); = (reference entry); ! (US location with duplicate IATA code)",
+            "name": "Change",
+            "type": "string"
+          },
+          {
+            "description": "ISO 3166 alpha-2 Country Code, defined in countryCodes.csv",
+            "name": "Country",
+            "pattern": "[A-Z]{2}",
+            "type": "string"
+          },
+          {
+            "name": "Location",
+            "pattern": "[A-Z2-9]{3}",
+            "type": "string"
+          },
+          {
+            "name": "Name",
+            "type": "string"
+          },
+          {
+            "name": "NameWoDiacritics",
+            "type": "string"
+          },
+          {
+            "description": "Defined in subdivisionCodes.csv",
+            "name": "Subdivision",
+            "type": "string"
+          },
+          {
+            "description": "Defined in statusIndicators.csv",
+            "name": "Status",
+            "type": "string"
+          },
+          {
+            "description": "Defined in functionClassifiers.csv",
+            "name": "Function",
+            "pattern": "[01-][2-][3-][4-][5-][6-][7-][B-]",
+            "type": "string"
+          },
+          {
+            "description": "ym",
+            "name": "Date",
+            "type": "string"
+          },
+          {
+            "description": "IATA code if different from LOCODE",
+            "name": "IATA",
+            "type": "string"
+          },
+          {
+            "description": "DDMM[N/S] DDDMM[W/E]",
+            "name": "Coordinates",
+            "type": "string"
+          },
+          {
+            "name": "Remarks",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "bytes": 3883,
+      "datahub": {
+        "type": "original"
+      },
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/8dd25ff4eff017996be8ab05d71b66d5.csv",
+      "encoding": "UTF-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "country-codes_original",
+      "path": "archive/country-codes.csv",
+      "pathType": "local",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "CountryCode",
+            "type": "string"
+          },
+          {
+            "name": "CountryName",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "bytes": 289,
+      "datahub": {
+        "type": "original"
+      },
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/b80462e045634aee478a210d7c046280.csv",
+      "encoding": "ISO-8859-1",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "function-classifiers_original",
+      "path": "archive/function-classifiers.csv",
+      "pathType": "local",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "FunctionCode",
+            "type": "string"
+          },
+          {
+            "name": "FunctionDescription",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "bytes": 812,
+      "datahub": {
+        "type": "original"
+      },
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/71435791309b2c4f40b1eb11d170aa8f.csv",
+      "encoding": "ISO-8859-1",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "status-indicators_original",
+      "path": "archive/status-indicators.csv",
+      "pathType": "local",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "STStatus",
+            "type": "string"
+          },
+          {
+            "name": "STDescription",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "bytes": 85275,
+      "datahub": {
+        "type": "original"
+      },
+      "dpp:streamedFrom": "https://s3.amazonaws.com/rawstore.datahub.io/ea26f72cf97fd5a587e317ed20a3f283.csv",
+      "encoding": "UTF-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "name": "subdivision-codes_original",
+      "path": "archive/subdivision-codes.csv",
+      "pathType": "local",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "name": "SUCountry",
+            "type": "string"
+          },
+          {
+            "name": "SUCode",
+            "type": "string"
+          },
+          {
+            "name": "SUName",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "bytes": 2643,
+      "datahub": {
+        "type": "derived/report"
+      },
+      "description": "Validation report for tabular data",
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/validation_report/data/175af94e2be138559bc2b6dfdf65e373/validation_report.json",
+      "format": "json",
+      "hash": "175af94e2be138559bc2b6dfdf65e373",
+      "name": "validation_report",
+      "path": "data/validation_report.json",
+      "profile": "data-resource"
+    },
+    {
+      "bytes": 6942448,
+      "datahub": {
+        "derivedFrom": [
+          "code-list"
+        ],
+        "type": "derived/csv"
+      },
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/code-list_csv/data/66fd8c1fa918b70bda77135f77e23a83/code-list_csv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "66fd8c1fa918b70bda77135f77e23a83",
+      "mediatype": "text/csv",
+      "name": "code-list_csv",
+      "path": "data/code-list_csv.csv",
+      "pathType": "local",
+      "profile": "data-resource",
+      "rowcount": 109801,
+      "schema": {
+        "fields": [
+          {
+            "description": "+ (newly added); X (to be removed); | (changed); # (name changed); = (reference entry); ! (US location with duplicate IATA code)",
+            "name": "Change",
+            "type": "string"
+          },
+          {
+            "description": "ISO 3166 alpha-2 Country Code, defined in countryCodes.csv",
+            "name": "Country",
+            "pattern": "[A-Z]{2}",
+            "type": "string"
+          },
+          {
+            "name": "Location",
+            "pattern": "[A-Z2-9]{3}",
+            "type": "string"
+          },
+          {
+            "name": "Name",
+            "type": "string"
+          },
+          {
+            "name": "NameWoDiacritics",
+            "type": "string"
+          },
+          {
+            "description": "Defined in subdivisionCodes.csv",
+            "name": "Subdivision",
+            "type": "string"
+          },
+          {
+            "description": "Defined in statusIndicators.csv",
+            "name": "Status",
+            "type": "string"
+          },
+          {
+            "description": "Defined in functionClassifiers.csv",
+            "name": "Function",
+            "pattern": "[01-][2-][3-][4-][5-][6-][7-][B-]",
+            "type": "string"
+          },
+          {
+            "description": "ym",
+            "name": "Date",
+            "type": "string"
+          },
+          {
+            "description": "IATA code if different from LOCODE",
+            "name": "IATA",
+            "type": "string"
+          },
+          {
+            "description": "DDMM[N/S] DDDMM[W/E]",
+            "name": "Coordinates",
+            "type": "string"
+          },
+          {
+            "name": "Remarks",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 4132,
+      "datahub": {
+        "derivedFrom": [
+          "country-codes"
+        ],
+        "type": "derived/csv"
+      },
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/country-codes_csv/data/86be7828c51c531ef4363dd0510f7bea/country-codes_csv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "86be7828c51c531ef4363dd0510f7bea",
+      "mediatype": "text/csv",
+      "name": "country-codes_csv",
+      "path": "data/country-codes_csv.csv",
+      "pathType": "local",
+      "profile": "data-resource",
+      "rowcount": 249,
+      "schema": {
+        "fields": [
+          {
+            "name": "CountryCode",
+            "type": "string"
+          },
+          {
+            "name": "CountryName",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 300,
+      "datahub": {
+        "derivedFrom": [
+          "function-classifiers"
+        ],
+        "type": "derived/csv"
+      },
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/function-classifiers_csv/data/b80462e045634aee478a210d7c046280/function-classifiers_csv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "b80462e045634aee478a210d7c046280",
+      "mediatype": "text/csv",
+      "name": "function-classifiers_csv",
+      "path": "data/function-classifiers_csv.csv",
+      "pathType": "local",
+      "profile": "data-resource",
+      "rowcount": 10,
+      "schema": {
+        "fields": [
+          {
+            "name": "FunctionCode",
+            "type": "string"
+          },
+          {
+            "name": "FunctionDescription",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 827,
+      "datahub": {
+        "derivedFrom": [
+          "status-indicators"
+        ],
+        "type": "derived/csv"
+      },
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/status-indicators_csv/data/71435791309b2c4f40b1eb11d170aa8f/status-indicators_csv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "71435791309b2c4f40b1eb11d170aa8f",
+      "mediatype": "text/csv",
+      "name": "status-indicators_csv",
+      "path": "data/status-indicators_csv.csv",
+      "pathType": "local",
+      "profile": "data-resource",
+      "rowcount": 14,
+      "schema": {
+        "fields": [
+          {
+            "name": "STStatus",
+            "type": "string"
+          },
+          {
+            "name": "STDescription",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 89635,
+      "datahub": {
+        "derivedFrom": [
+          "subdivision-codes"
+        ],
+        "type": "derived/csv"
+      },
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/subdivision-codes_csv/data/2222f1f68b645bb2b9909cbe6ec1a455/subdivision-codes_csv.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "2222f1f68b645bb2b9909cbe6ec1a455",
+      "mediatype": "text/csv",
+      "name": "subdivision-codes_csv",
+      "path": "data/subdivision-codes_csv.csv",
+      "pathType": "local",
+      "profile": "data-resource",
+      "rowcount": 4702,
+      "schema": {
+        "fields": [
+          {
+            "name": "SUCountry",
+            "type": "string"
+          },
+          {
+            "name": "SUCode",
+            "type": "string"
+          },
+          {
+            "name": "SUName",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 27041251,
+      "datahub": {
+        "derivedFrom": [
+          "code-list"
+        ],
+        "type": "derived/json"
+      },
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/code-list_json/data/63a059f49f171a99806c1023bd4f9c3e/code-list_json.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "63a059f49f171a99806c1023bd4f9c3e",
+      "mediatype": "text/csv",
+      "name": "code-list_json",
+      "path": "data/code-list_json.json",
+      "pathType": "local",
+      "profile": "data-resource",
+      "rowcount": 109801,
+      "schema": {
+        "fields": [
+          {
+            "description": "+ (newly added); X (to be removed); | (changed); # (name changed); = (reference entry); ! (US location with duplicate IATA code)",
+            "name": "Change",
+            "type": "string"
+          },
+          {
+            "description": "ISO 3166 alpha-2 Country Code, defined in countryCodes.csv",
+            "name": "Country",
+            "pattern": "[A-Z]{2}",
+            "type": "string"
+          },
+          {
+            "name": "Location",
+            "pattern": "[A-Z2-9]{3}",
+            "type": "string"
+          },
+          {
+            "name": "Name",
+            "type": "string"
+          },
+          {
+            "name": "NameWoDiacritics",
+            "type": "string"
+          },
+          {
+            "description": "Defined in subdivisionCodes.csv",
+            "name": "Subdivision",
+            "type": "string"
+          },
+          {
+            "description": "Defined in statusIndicators.csv",
+            "name": "Status",
+            "type": "string"
+          },
+          {
+            "description": "Defined in functionClassifiers.csv",
+            "name": "Function",
+            "pattern": "[01-][2-][3-][4-][5-][6-][7-][B-]",
+            "type": "string"
+          },
+          {
+            "description": "ym",
+            "name": "Date",
+            "type": "string"
+          },
+          {
+            "description": "IATA code if different from LOCODE",
+            "name": "IATA",
+            "type": "string"
+          },
+          {
+            "description": "DDMM[N/S] DDDMM[W/E]",
+            "name": "Coordinates",
+            "type": "string"
+          },
+          {
+            "name": "Remarks",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 13062,
+      "datahub": {
+        "derivedFrom": [
+          "country-codes"
+        ],
+        "type": "derived/json"
+      },
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/country-codes_json/data/422375225f2c6a4c544361c361b05d61/country-codes_json.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "422375225f2c6a4c544361c361b05d61",
+      "mediatype": "text/csv",
+      "name": "country-codes_json",
+      "path": "data/country-codes_json.json",
+      "pathType": "local",
+      "profile": "data-resource",
+      "rowcount": 249,
+      "schema": {
+        "fields": [
+          {
+            "name": "CountryCode",
+            "type": "string"
+          },
+          {
+            "name": "CountryName",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 711,
+      "datahub": {
+        "derivedFrom": [
+          "function-classifiers"
+        ],
+        "type": "derived/json"
+      },
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/function-classifiers_json/data/c160c916cc3a3c82bebf38fa2e2d63f2/function-classifiers_json.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "c160c916cc3a3c82bebf38fa2e2d63f2",
+      "mediatype": "text/csv",
+      "name": "function-classifiers_json",
+      "path": "data/function-classifiers_json.json",
+      "pathType": "local",
+      "profile": "data-resource",
+      "rowcount": 10,
+      "schema": {
+        "fields": [
+          {
+            "name": "FunctionCode",
+            "type": "string"
+          },
+          {
+            "name": "FunctionDescription",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 1290,
+      "datahub": {
+        "derivedFrom": [
+          "status-indicators"
+        ],
+        "type": "derived/json"
+      },
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/status-indicators_json/data/ae192afd25e3d81adb25e8d2f8d5c9c2/status-indicators_json.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "ae192afd25e3d81adb25e8d2f8d5c9c2",
+      "mediatype": "text/csv",
+      "name": "status-indicators_json",
+      "path": "data/status-indicators_json.json",
+      "pathType": "local",
+      "profile": "data-resource",
+      "rowcount": 14,
+      "schema": {
+        "fields": [
+          {
+            "name": "STStatus",
+            "type": "string"
+          },
+          {
+            "name": "STDescription",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 293937,
+      "datahub": {
+        "derivedFrom": [
+          "subdivision-codes"
+        ],
+        "type": "derived/json"
+      },
+      "dpp:streamedFrom": "/tmp/tmp1gen_87r/core/un-locode/subdivision-codes_json/data/8daa7ed4629f602afdac3001e80f99b5/subdivision-codes_json.json",
+      "encoding": "utf-8",
+      "format": "json",
+      "hash": "8daa7ed4629f602afdac3001e80f99b5",
+      "mediatype": "text/csv",
+      "name": "subdivision-codes_json",
+      "path": "data/subdivision-codes_json.json",
+      "pathType": "local",
+      "profile": "data-resource",
+      "rowcount": 4702,
+      "schema": {
+        "fields": [
+          {
+            "name": "SUCountry",
+            "type": "string"
+          },
+          {
+            "name": "SUCode",
+            "type": "string"
+          },
+          {
+            "name": "SUName",
+            "type": "string"
+          }
+        ]
+      },
+      "signed": true
+    },
+    {
+      "bytes": 501,
+      "dpp:streamedFrom": "/tmp/tmpo7je3tbi/README.md",
+      "format": "md",
+      "name": "readme",
+      "path": "README.md"
+    }
+  ],
+  "sources": [
+    {
+      "name": "UNECE",
+      "path": "http://www.unece.org/cefact/locode/welcome.html",
+      "title": "UNECE"
+    }
+  ],
+  "title": "UN-LOCODE Codelist",
+  "version": "2018.1.0"
+}
